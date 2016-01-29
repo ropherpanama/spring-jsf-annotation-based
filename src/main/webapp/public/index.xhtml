@@ -1,0 +1,31 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>spring-jsf-xml-based</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+		<p:panel id="login" header="Login" footer="made with Primefaces">
+			<h:panelGrid columns="2" cellpadding="5">
+
+				<h:outputText value="Username" for="username" />
+				<p:inputText id="username" value="#{mbLogin.username}"></p:inputText>
+
+				<h:outputText value="Password" for="password" />
+				<p:password id="password" value="#{mbLogin.password}"></p:password>
+
+				<p:commandButton action="#{mbLogin.login}" value="Login" ajax="true"></p:commandButton>
+
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>
